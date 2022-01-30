@@ -8,11 +8,11 @@ const client = new Client({
 });
 
 client.on('ready', () => {
-  console.log('Logged in as' + client.user.tag);
+  console.log('Logged in as ' + client.user.tag);
 });
 
 client.on('messageCreate', (msg) => {
-  if (msg.author.bot) return;
+  if (msg.author.bot) return; // check if the message is form our bot or not
   if (!msg.content.startsWith(prefix)) return;
 
   const userCmd = msg.content.slice(prefix.length);
